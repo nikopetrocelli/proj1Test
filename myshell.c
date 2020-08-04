@@ -10,8 +10,7 @@
 #include <string.h>
 #include <sys/types.h>
 #include "shellfuncts.h"
-#include<readline/readline.h> 
-#include<readline/history.h>
+
 
 
 #define MAXINPUT 100 // max number of input characters
@@ -34,9 +33,9 @@ void initialize(){
 
 int getInput(char* input){
     
-    char* temp;
+    scanf("%[^\n]%*c", input);
 
-    temp = readline("\n>>> ");
+  /*  temp = readline("\n>>> ");
     if (strlen(temp) != 0){
         add_history(temp);
         strcpy(input, temp);
@@ -45,7 +44,15 @@ int getInput(char* input){
     else{
         return 1;
     }
+    */
 
+   if (input == null){
+       return 0;
+   }
+   else
+   {
+       return 1;
+   }
 
 }
 
@@ -66,6 +73,15 @@ int processInput(char* input, char** inputParsed){
 
     
     return 0;
+
+    temp = strtok(input, " ");
+        while (temp!= NULL)
+        {
+            printf ("%s\n",temp);
+            temp = strtok (NULL, ",:");
+        }
+        return 0;
+
 
 
 
