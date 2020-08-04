@@ -50,6 +50,8 @@ int getInput(char* input, char* inputParsed){
         }
 
     printf("%s\n", inputParsed);
+    printf("%sfirst one\n", inputParsed[0]);
+    printf("%ssecon one\n", inputParsed[1]);
     return 0;
 
 
