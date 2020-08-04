@@ -9,6 +9,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
+#include <sys/readline.h>
+#include <readline/history.h>
 #include "shellfuncts.h"
 
 
@@ -33,29 +35,7 @@ void initialize(){
 
 int getInput(char* input, char* inputParsed){
     
-    scanf("%[^\n]%*c", input);
-
-
-    char *temp;
-    int i = 0;
-    temp = strtok(input, " ");
-        while (temp!= NULL)
-        {
-
-            //printf ("%s\n",temp);
-            if (i <MAXCMDS)
-                inputParsed[i] = temp;
-            temp = strtok (NULL, " ");
-            i++;
-        }
-
-    printf("%s\n", inputParsed);
-    printf("%sfirst one\n", inputParsed[0]);
-    printf("%ssecon one\n", inputParsed[1]);
-    return 0;
-
-
-  /*  temp = readline("\n>>> ");
+     temp = readline("\n>>> ");
     if (strlen(temp) != 0){
         add_history(temp);
         strcpy(input, temp);
@@ -64,19 +44,7 @@ int getInput(char* input, char* inputParsed){
     else{
         return 1;
     }
-    */
-
-   /*if (input == NULL){
-       return 0;
-   }
-   else
-   {
-       return 1;
-   }
-   */
-
-  
-  
+      
 
 }
 
@@ -121,7 +89,7 @@ int main(int argv, const char *argc[]) {
 	(void) argc; // Make compile warnings go away - be sure to delete this line if you use the param
     
     char input[MAXINPUT]; // max number of input support
-    char inputParsed[MAXCMDS]; //max number of commands
+    char* inputParsed[MAXCMDS]; //max number of commands
 
     int executeCMD = 0;
 
@@ -133,7 +101,7 @@ int main(int argv, const char *argc[]) {
     while (1){
 
         //get the user input
-        if(getInput(input, inputParsed))
+        if(getInput(input)
             continue;
         
 
