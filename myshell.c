@@ -73,6 +73,7 @@ int processInput(char* input, char** inputParsed){
 
     
     return 0;
+    char *temp;
 
     temp = strtok(input, " ");
         while (temp!= NULL)
