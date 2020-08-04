@@ -60,7 +60,7 @@ int getInput(char* input){
 
 }
 
-int processInput(char* input, *inputParsed){
+int processInput(char* input, char* inputParsed){
     
   /*  for (int i = 0; i< MAXCMDS; i++ ){
         inputParsed[i] = strsep(&input, " ");
