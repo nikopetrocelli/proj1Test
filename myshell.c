@@ -33,10 +33,11 @@ void initialize(){
 
 }
 
-#define LINESIZE 500;
+#define LINESIZE 500
 char *sh_read(void){
     char buff[LINESIZE];
-    	scanf("%[^\n]%*c", buff);
+    
+    scanf("%[^\n]%*c", buff);
 	
 	return buff;
 
