@@ -16,7 +16,7 @@
  *		Returns: always returns 1, no matter what. Fairly useless.
  *
  *************************************************************************************/
-
+/*
 int hello(int param1) {
 	// I'm commenting to explain that this checks param and changes the message
 	if (param1 == 1)
@@ -28,6 +28,7 @@ int hello(int param1) {
 	return 1;
 }
 
+*/
 /*************************************************************************************
  * hello - sends hello world to the user! I'm doing proper function commenting so future
  *         coders might not find my code as painful.
@@ -36,8 +37,25 @@ int hello(int param1) {
  *                      say, msgstr or sendtext
  *
  *************************************************************************************/
-
+/*
 void send_msg(const char *param2) {
 	printf("%s", param2);
+	
+}*/
+void create(const char *name){
+
+
+	FILE *file;
+	if ((file = fopen(name,"r"))){
+		fclose(file);
+		printf("\nThis file already exists\n");
+	}
+	else{
+		file = fopen(name, "w");
+		fclose(file);}
+	return;
+
+
 }
+
 
