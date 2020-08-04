@@ -10,7 +10,8 @@
 #include <string.h>
 #include <sys/types.h>
 #include "shellfuncts.h"
-#include<readline.h> 
+#include<readline/readline.h> 
+#include<readline/history.h>
 
 
 #define MAXINPUT 100 // max number of input characters
