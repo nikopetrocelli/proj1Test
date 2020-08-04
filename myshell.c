@@ -46,19 +46,21 @@ int getInput(char* input){
     }
     */
 
-   if (input == NULL){
+   /*if (input == NULL){
        return 0;
    }
    else
    {
        return 1;
    }
+   */
+  processInput(input);
 
 }
 
-int processInput(char* input, char** inputParsed){
+int processInput(char* input){
     
-    for (int i = 0; i< MAXCMDS; i++ ){
+  /*  for (int i = 0; i< MAXCMDS; i++ ){
         inputParsed[i] = strsep(&input, " ");
 
         if(inputParsed[i] == NULL)
@@ -73,7 +75,7 @@ int processInput(char* input, char** inputParsed){
 
     
     return 0;
-    char *temp;
+    char *temp;*/
 
     temp = strtok(input, " ");
         while (temp!= NULL)
