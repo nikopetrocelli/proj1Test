@@ -110,7 +110,7 @@ int main(int argv, const char *argc[]) {
         if(getInput(input))
             continue;
 
-        executeCMD = processInput(input, inputParsed);
+        //executeCMD = processInput(input, inputParsed);
         //do i have a command to execute?
 
         printf("\n%d", executeCMD);
