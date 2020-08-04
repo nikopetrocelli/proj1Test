@@ -46,7 +46,7 @@ int getInput(char* input){
     }
     */
 
-   if (input == null){
+   if (input == NULL){
        return 0;
    }
    else
