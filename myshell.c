@@ -31,9 +31,27 @@ void initialize(){
 
 }
 
-int getInput(char* input){
+int getInput(char* input, char* inputParsed){
     
     scanf("%[^\n]%*c", input);
+
+
+    char *temp;
+    int i = 0;
+    temp = strtok(input, " ");
+        while (temp!= NULL)
+        {
+
+            printf ("%s\n",temp);
+            if (i <MAXCMDS)
+                inputParsed[i] = temp;
+            temp = strtok (NULL, " ");
+            i++;
+        }
+
+    printf("%s\n", inputParsed);
+    return 0;
+
 
   /*  temp = readline("\n>>> ");
     if (strlen(temp) != 0){
@@ -55,12 +73,12 @@ int getInput(char* input){
    }
    */
 
-  return 1;
+  
   
 
 }
 
-int processInput(char* input, char* inputParsed){
+/*int processInput(char* input, char* inputParsed){
     
   /*  for (int i = 0; i< MAXCMDS; i++ ){
         inputParsed[i] = strsep(&input, " ");
@@ -77,7 +95,7 @@ int processInput(char* input, char* inputParsed){
 
     
     return 0;*/
-    char *temp;
+    /*char *temp;
     int i = 0;
     temp = strtok(input, " ");
         while (temp!= NULL)
@@ -94,7 +112,7 @@ int processInput(char* input, char* inputParsed){
 
 
 
-}
+}*/
 
 int main(int argv, const char *argc[]) {
 	(void) argv; // Make compile warnings go away - be sure to delete this line if you use the param
@@ -116,8 +134,8 @@ int main(int argv, const char *argc[]) {
         if(getInput(input))
             continue;
         
-        processInput(input, inputParsed);
-        printf("%s\n", inputParsed);
+
+
 
         //executeCMD = processInput(input, inputParsed);
         //do i have a command to execute?
