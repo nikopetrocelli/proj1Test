@@ -54,11 +54,13 @@ int getInput(char* input){
        return 1;
    }
    */
-  processInput(input);
+
+  return 1;
+  
 
 }
 
-int processInput(char* input){
+int processInput(char* input, *inputParsed){
     
   /*  for (int i = 0; i< MAXCMDS; i++ ){
         inputParsed[i] = strsep(&input, " ");
@@ -76,12 +78,16 @@ int processInput(char* input){
     
     return 0;*/
     char *temp;
-
+    int i = 0;
     temp = strtok(input, " ");
         while (temp!= NULL)
         {
+
             printf ("%s\n",temp);
+            if (i <MAXCMDS)
+                inputParsed[i] = temp;
             temp = strtok (NULL, " ");
+            i++;
         }
         return 0;
 
@@ -95,7 +101,7 @@ int main(int argv, const char *argc[]) {
 	(void) argc; // Make compile warnings go away - be sure to delete this line if you use the param
     
     char input[MAXINPUT]; // max number of input support
-    char *inputParsed[MAXCMDS]; //max number of commands
+    char inputParsed[MAXCMDS]; //max number of commands
 
     int executeCMD = 0;
 
@@ -109,6 +115,9 @@ int main(int argv, const char *argc[]) {
         //get the user input
         if(getInput(input))
             continue;
+        
+        processInput(input, inputParsed);
+        printf("%s\n", inputParsed);
 
         //executeCMD = processInput(input, inputParsed);
         //do i have a command to execute?
