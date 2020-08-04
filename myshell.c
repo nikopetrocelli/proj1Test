@@ -33,7 +33,7 @@ void initialize(){
 
 }
 
-int getInput(char* input, char* inputParsed){
+int getInput(char* input){
     
      temp = readline("\n>>> ");
     if (strlen(temp) != 0){
