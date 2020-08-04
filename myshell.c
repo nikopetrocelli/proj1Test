@@ -33,91 +33,71 @@ void initialize(){
 
 }
 
-int getInput(char* input){
-    
-    char* temp;
+#define LINESIZE = 500;
+char *sh_read(void){
+    char *buff;
+    	buff = scanf("%[^\n]%*c", string);
+	
+	return buff;
 
-     temp = readline("\n>>> ");
-    if (strlen(temp) != 0){
-        add_history(temp);
-        strcpy(input, temp);
-        return 0;
+   /* int size = LINESIZE;
+    int pos = 0;
+
+    char *buff = malloc(sizeof(char)*size);
+    int c;
+
+    if (!buff){
+        fprintf(stderr,"shell: mem error\n");
+        exit(0);
+
     }
-    else{
-        return 1;
-    }
-      
+
+    while (1){
+        // read a character
+        c = getchar();
+        //if we are at the end set a null and return 
+        if (c==EOF || c =='\n'){
+            buff[pos] = '\0';
+
+        }
+        else{
+            buff[pos] = c;
+        }
+        pos++;
+    }*/
+
 
 }
-
-/*int processInput(char* input, char* inputParsed){
-    
-  /*  for (int i = 0; i< MAXCMDS; i++ ){
-        inputParsed[i] = strsep(&input, " ");
-
-        if(inputParsed[i] == NULL)
-            break;
-        if (strlen(inputParsed[i])==0){
-            i--;
-        }
-
-    }
-
-          printf("\n%s", inputParsed);
-
-    
-    return 0;*/
-    /*char *temp;
-    int i = 0;
-    temp = strtok(input, " ");
-        while (temp!= NULL)
-        {
-
-            printf ("%s\n",temp);
-            if (i <MAXCMDS)
-                inputParsed[i] = temp;
-            temp = strtok (NULL, " ");
-            i++;
-        }
-        return 0;
-
-
-
-
-}*/
 
 int main(int argv, const char *argc[]) {
 	(void) argv; // Make compile warnings go away - be sure to delete this line if you use the param
 	(void) argc; // Make compile warnings go away - be sure to delete this line if you use the param
-    
-    char input[MAXINPUT]; // max number of input support
-    char* inputParsed[MAXCMDS]; //max number of commands
 
-    int executeCMD = 0;
 
+    char *cmd;
+    char **args;
+    int execFlag;
     // print the splash screen
     initialize();
     
 
     //loop the program
-    while (1){
+    do{
 
         //get the user input
-        if(getInput(input))
-            continue;
+        printf("> ");
+        cmd = sh_read();
+        printf("\n%s", cmd);
+        //args = sh_split_line(cmd);
+       // execFlag = sh_execute(args);
+
+        free(line);
+        free(args); 
+
+
         
 
-
-
-        //executeCMD = processInput(input, inputParsed);
-        //do i have a command to execute?
-
-        //printf("\n%d", executeCMD);
-       // if (executeCMD ==1)
-
-        
-
-    }
+    }while (execFlag);
 
 
 
