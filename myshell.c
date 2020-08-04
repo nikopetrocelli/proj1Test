@@ -91,8 +91,8 @@ int main(int argv, const char *argc[]) {
         //args = sh_split_line(cmd);
        // execFlag = sh_execute(args);
 
-        free(line);
-        free(args); 
+       // free(line);
+        //free(args); 
 
 
         
