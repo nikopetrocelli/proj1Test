@@ -32,14 +32,14 @@ void initialize(){
 
 }
 
-int getInput(char* string){
+int getInput(char* input){
     
     char* temp;
 
     temp = readline("\n>>> ");
     if (strlen(temp) != 0){
         add_history(temp);
-        strcpy(string, temp);
+        strcpy(input, temp);
         return 0;
     }
     else{
