@@ -59,7 +59,7 @@ int processInput(char* input, char** inputParsed){
 
     }
 
-          printf("\n%s", inputParsed)
+          printf("\n%s", inputParsed);
 
     
     return 0;
@@ -91,7 +91,7 @@ int main(int argv, const char *argc[]) {
         executeCMD = processInput(input, inputParsed);
         //do i have a command to execute?
 
-        printf("\n%d", executeCMD)
+        printf("\n%d", executeCMD);
        // if (executeCMD ==1)
 
         
