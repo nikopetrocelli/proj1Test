@@ -42,7 +42,7 @@ int getInput(char* input, char* inputParsed){
         while (temp!= NULL)
         {
 
-            printf ("%s\n",temp);
+            //printf ("%s\n",temp);
             if (i <MAXCMDS)
                 inputParsed[i] = temp;
             temp = strtok (NULL, " ");
