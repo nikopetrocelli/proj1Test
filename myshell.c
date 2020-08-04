@@ -131,7 +131,7 @@ int main(int argv, const char *argc[]) {
     while (1){
 
         //get the user input
-        if(getInput(input))
+        if(getInput(input, inputParsed))
             continue;
         
 
