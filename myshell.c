@@ -74,8 +74,8 @@ int processInput(char* input){
           printf("\n%s", inputParsed);
 
     
-    return 0;
-    char *temp;*/
+    return 0;*/
+    char *temp;
 
     temp = strtok(input, " ");
         while (temp!= NULL)
