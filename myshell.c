@@ -49,7 +49,7 @@ int getInput(char* string){
 int processInput(char* input, char** inputParsed){
     
     for (int i = 0; i< MAXCMDS; i++ ){
-        inputParsed[i] = strsep(&str, " ");
+        inputParsed[i] = strsep(&input, " ");
 
         if(inputParsed[i] == NULL)
             break;
