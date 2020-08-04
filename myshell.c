@@ -35,6 +35,8 @@ void initialize(){
 
 int getInput(char* input){
     
+    char* temp;
+
      temp = readline("\n>>> ");
     if (strlen(temp) != 0){
         add_history(temp);
@@ -101,7 +103,7 @@ int main(int argv, const char *argc[]) {
     while (1){
 
         //get the user input
-        if(getInput(input)
+        if(getInput(input))
             continue;
         
 
